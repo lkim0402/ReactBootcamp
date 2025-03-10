@@ -142,3 +142,23 @@ function getBooks() {
 function getBook(id) {
   return data.find((d) => d.id === id);
 }
+
+const books = getBooks();
+
+const newBook = {
+  id: 6,
+  title: "harry potter",
+  author: "jk",
+  pages: 100,
+};
+
+const booksAfterAdd = [...books, newBook];
+// booksAfterAdd;
+
+const booksAfterDelete = booksAfterAdd.filter((book) => books.includes(book));
+// booksAfterDelete;
+
+const booksAfterUpdate = booksAfterDelete.map((book) =>
+  book.id == 5 ? { ...book, pages: book.pages + 100 } : book
+);
+booksAfterUpdate;
